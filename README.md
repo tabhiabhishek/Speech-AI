@@ -10,9 +10,7 @@
   <img src="https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white" alt="Streamlit">
 </p>
 
-\# 🎙️ Real-Time Speech AI Assistant
-
-
+# 🎙️ Real-Time Speech AI Assistant
 
 A real-time, multimodal AI application that captures voice audio, transcribes it locally using GPU-accelerated Whisper, and processes the text with a local LLM (Ollama).
 
@@ -21,19 +19,12 @@ A real-time, multimodal AI application that captures voice audio, transcribes it
   <br><sub>App preview: a voice note turned into action items, fully on your own machine</sub>
 </p>
 
+## ✨ Key Features
 
-
-\## ✨ Key Features
-
-\- \*\*Local Speech-to-Text:\*\* Uses `faster-whisper` running on NVIDIA GPU (CUDA) for lightning-fast, private audio transcription.
-
-\- \*\*Local LLM Processing:\*\* Chains the transcription directly into Ollama (Qwen 2.5) to summarize, translate, or extract action items from voice notes.
-
-\- \*\*Zero API Costs:\*\* 100% local execution. No data leaves your machine, and no external API keys are required.
-
-\- \*\*Interactive UI:\*\* Built with Streamlit and `streamlit-mic-recorder` for seamless in-browser audio capture.
-
-
+- **Local Speech-to-Text:** Uses `faster-whisper` running on NVIDIA GPU (CUDA) for lightning-fast, private audio transcription.
+- **Local LLM Processing:** Chains the transcription directly into Ollama (Qwen 2.5) to summarize, translate, or extract action items from voice notes.
+- **Zero API Costs:** 100% local execution. No data leaves your machine, and no external API keys are required.
+- **Interactive UI:** Built with Streamlit and `streamlit-mic-recorder` for seamless in-browser audio capture.
 
 ## ⚙️ How It Works
 
@@ -41,32 +32,38 @@ A real-time, multimodal AI application that captures voice audio, transcribes it
   <img src="docs/images/architecture.svg" alt="Pipeline: Record → Transcribe → Choose Task → Process → Result" width="100%">
 </p>
 
+## 🛠️ Tech Stack
 
-\## 🛠️ Tech Stack
+- **Python 3.11+**
+- **Faster-Whisper** (High-performance local ASR)
+- **Ollama** (Local LLM inference)
+- **Streamlit** (Interactive Web UI)
+- **Pydub** (Audio processing)
 
-\- \*\*Python 3.11+\*\*
+## 🚀 Getting Started
 
-\- \*\*Faster-Whisper\*\* (High-performance local ASR)
+### Prerequisites
+1. Install [Ollama](https://ollama.com/download) on your machine.
+2. Pull the required local model:
+   ```bash
+   ollama pull qwen2.5
+   ```
+3. An **NVIDIA GPU with CUDA** (Whisper runs on `cuda` with `float16`). On a CPU-only machine, change `device="cuda", compute_type="float16"` to `device="cpu", compute_type="int8"` in `speech_engine.py`.
 
-\- \*\*Ollama\*\* (Local LLM inference)
+### Installation
+```bash
+git clone https://github.com/tabhiabhishek/Speech-AI.git
+cd Speech-AI
+python -m venv venv
+venv\Scripts\activate        # Windows
+# source venv/bin/activate    # macOS / Linux
+pip install -r requirements.txt
+```
 
-\- \*\*Streamlit\*\* (Interactive Web UI)
+### Run the app
+```bash
+streamlit run app.py
+```
+Then open http://localhost:8501 in your browser.
 
-\- \*\*Pydub\*\* (Audio processing)
-
-
-
-\## 🚀 Getting Started
-
-
-
-\### Prerequisites
-
-1\. Install \[Ollama](https://ollama.com/download) on your machine.
-
-2\. Pull the required local model:
-
-&nbsp;  ```bash
-
-&nbsp;  ollama pull qwen2.5
-
+Allow microphone access in the browser, click **Start Recording**, speak, then click **Stop Recording**. Pick the AI task in the sidebar.

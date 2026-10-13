@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="740" viewBox="0 0 1280 740" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <!-- window -->
+  <rect width="1280" height="740" rx="14" fill="#0f141a"/>
+  <rect x="0.5" y="0.5" width="1279" height="739" rx="14" fill="none" stroke="#2a323d"/>
+  <rect width="1280" height="40" rx="14" fill="#161c24"/>
+  <rect y="26" width="1280" height="14" fill="#161c24"/>
+  <circle cx="22" cy="20" r="6" fill="#ef4444"/><circle cx="42" cy="20" r="6" fill="#f59e0b"/><circle cx="62" cy="20" r="6" fill="#22c55e"/>
+  <text x="640" y="25" text-anchor="middle" font-size="13" fill="#9ca3af">Real-Time Speech AI — localhost:8501</text>
+
+  <!-- sidebar -->
+  <rect x="1" y="40" width="300" height="699" fill="#121820"/>
+  <line x1="301" y1="40" x2="301" y2="739" stroke="#2a323d"/>
+  <text x="28" y="92" font-size="20" font-weight="700" fill="#f3f4f6">AI Task</text>
+  <text x="28" y="128" font-size="13" fill="#9ca3af">What should the AI do with your voice?</text>
+  <g font-size="14" fill="#d1d5db">
+    <circle cx="38" cy="164" r="8" fill="none" stroke="#4b5563" stroke-width="2"/>
+    <text x="56" y="169">Summarize the key points</text>
+    <circle cx="38" cy="198" r="8" fill="none" stroke="#4b5563" stroke-width="2"/>
+    <text x="56" y="203">Translate to Spanish</text>
+    <circle cx="38" cy="232" r="8" fill="none" stroke="#22c55e" stroke-width="2"/>
+    <circle cx="38" cy="232" r="4" fill="#22c55e"/>
+    <text x="56" y="237" fill="#f3f4f6" font-weight="600">Extract action items</text>
+    <circle cx="38" cy="266" r="8" fill="none" stroke="#4b5563" stroke-width="2"/>
+    <text x="56" y="271">Fix grammar and make it professional</text>
+  </g>
+  <rect x="24" y="640" width="252" height="68" rx="10" fill="#161c24" stroke="#2a323d"/>
+  <circle cx="44" cy="662" r="4" fill="#22c55e"/>
+  <text x="56" y="667" font-size="12" fill="#4ade80">Whisper base · cuda · float16</text>
+  <circle cx="44" cy="688" r="4" fill="#38bdf8"/>
+  <text x="56" y="693" font-size="12" fill="#7dd3fc">Ollama qwen2.5 · temp 0.3</text>
+
+  <!-- main -->
+  <g transform="translate(340,0)">
+    <!-- title -->
+    <rect x="8" y="74" width="16" height="26" rx="8" fill="none" stroke="#22c55e" stroke-width="3"/>
+    <path d="M3 92 a13 13 0 0 0 26 0" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+    <line x1="16" y1="105" x2="16" y2="112" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+    <text x="40" y="104" font-size="32" font-weight="700" fill="#f3f4f6">Real-Time Speech AI Assistant</text>
+    <text x="0" y="140" font-size="15" fill="#d1d5db">Record your voice, transcribe it locally using <tspan font-weight="700">Whisper</tspan>, and process it with <tspan font-weight="700">Ollama</tspan>.</text>
+
+    <!-- 1 record -->
+    <text x="0" y="186" font-size="20" font-weight="700" fill="#f3f4f6">1. Record Your Voice</text>
+    <rect x="0" y="202" width="190" height="40" rx="8" fill="#1e2630" stroke="#ef4444"/>
+    <rect x="18" y="215" width="14" height="14" rx="2" fill="#ef4444"/>
+    <text x="42" y="227" font-size="14" font-weight="600" fill="#f3f4f6">Stop Recording</text>
+    <!-- audio player -->
+    <rect x="0" y="258" width="900" height="48" rx="24" fill="#161c24" stroke="#2a323d"/>
+    <path d="M24 272 l14 10 l-14 10 z" fill="#d1d5db"/>
+    <text x="56" y="287" font-size="13" fill="#9ca3af" font-family="Consolas, Menlo, monospace">0:00 / 0:18</text>
+    <g fill="#38bdf8">
+      <rect x="160" y="278" width="3" height="8" rx="1.5"/><rect x="168" y="274" width="3" height="16" rx="1.5"/><rect x="176" y="270" width="3" height="24" rx="1.5"/>
+      <rect x="184" y="276" width="3" height="12" rx="1.5"/><rect x="192" y="268" width="3" height="28" rx="1.5"/><rect x="200" y="273" width="3" height="18" rx="1.5"/>
+      <rect x="208" y="277" width="3" height="10" rx="1.5"/><rect x="216" y="271" width="3" height="22" rx="1.5"/><rect x="224" y="275" width="3" height="14" rx="1.5"/>
+      <rect x="232" y="269" width="3" height="26" rx="1.5"/><rect x="240" y="276" width="3" height="12" rx="1.5"/><rect x="248" y="272" width="3" height="20" rx="1.5"/>
+    </g>
+    <rect x="270" y="280" width="560" height="4" rx="2" fill="#2a323d"/>
+    <rect x="270" y="280" width="560" height="4" rx="2" fill="#22c55e" opacity="0.0"/>
+    <circle cx="860" cy="282" r="9" fill="none" stroke="#9ca3af" stroke-width="2"/>
+    <path d="M856 282 h8 M860 278 v8" stroke="#9ca3af" stroke-width="2" opacity="0"/>
+
+    <!-- 2 transcription -->
+    <text x="0" y="350" font-size="20" font-weight="700" fill="#f3f4f6">2. Transcription (Whisper)</text>
+    <rect x="0" y="366" width="900" height="112" rx="8" fill="#0c2233" stroke="#075985"/>
+    <g font-size="15" fill="#bae6fd">
+      <text x="20" y="398">Okay so quick update from the team sync. We need to finish the login page by Friday,</text>
+      <text x="20" y="424">Priya will review the API changes tomorrow, and I still have to send the client the</text>
+      <text x="20" y="450">updated estimate. Also let's book a demo with the design team next week.</text>
+    </g>
+
+    <!-- 3 ai processing -->
+    <text x="0" y="522" font-size="20" font-weight="700" fill="#f3f4f6">3. AI Processing (Ollama)</text>
+    <rect x="0" y="538" width="900" height="168" rx="8" fill="#0f2a1c" stroke="#166534"/>
+    <g font-size="15" fill="#bbf7d0">
+      <text x="20" y="570" font-weight="700">Action items:</text>
+      <text x="20" y="600">1. Finish the login page (due Friday)</text>
+      <text x="20" y="628">2. Priya: review the API changes (tomorrow)</text>
+      <text x="20" y="656">3. Send the client the updated estimate</text>
+      <text x="20" y="684">4. Book a demo with the design team (next week)</text>
+    </g>
+  </g>
+</svg>
